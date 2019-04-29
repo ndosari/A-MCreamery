@@ -1,0 +1,95 @@
+<p id="notice"><%= notice %></p>
+
+<!-- BACKGROUND -->
+<div style="background-image: url(assets/icecream_icon.jpg); background-repeat: repeat; background-color:rgba(0, 0, 0, 0.3); ">
+
+<% if (!@active_stores.nil?) then %>
+
+<!-- IMAGE AND TITLE (and descriptions with a link) -->
+<div style="background-color: white;" align="center">
+  </br></br>
+  <img src="assets/store_icon.png" alt="icecream" width="140" height="140"  style="border-radius: 50%; opacity: 0.6;">
+  <h1>Active Stores</h1>
+  </br>
+</div>
+
+<!-- TABLE OF STORES -->
+<table class="table table-hover table-striped table-bordered" align="center" style="width: 70%; background-color: white;">
+  <thead class= "thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Phone</th>
+      <th>Active</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @active_stores.each do |store| %>
+      <tr>
+        <td><%= store.name %></td>
+        <td><%= store.street %></td>
+        <td><%= store.city %></td>
+        <td><%= store.state %></td>
+        <td><%= store.zip %></td>
+        <td><%= store.phone %></td>
+        <td><%= store.active %></td>
+        <td><%= link_to 'Show', store %></td>
+        <td><%= link_to 'Edit', edit_store_path(store) %></td>
+        <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%end%>
+<br>
+
+<% if logged_in? %>
+<% if (!@inactive_stores.nil?) then %>
+
+<div style="background-color: white;" align="center">
+<h1>Inactive Stores</h1>
+</div>
+
+<!-- TABLE OF STORES -->
+<table class="table table-hover table-striped table-bordered" align="center" style="width: 70%; background-color: white;">
+  <thead class= "thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Phone</th>
+      <th>Active</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inactive_stores.each do |store| %>
+      <tr>
+        <td><%= store.name %></td>
+        <td><%= store.street %></td>
+        <td><%= store.city %></td>
+        <td><%= store.state %></td>
+        <td><%= store.zip %></td>
+        <td><%= store.phone %></td>
+        <td><%= store.active %></td>
+        <td><%= link_to 'Show', store %></td>
+        <td><%= link_to 'Edit', edit_store_path(store) %></td>
+        <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%end%>
+<% if current_user.role? :admin %>
+<%= link_to 'New Store', new_store_path %>
+<% end %>
+<% end %>

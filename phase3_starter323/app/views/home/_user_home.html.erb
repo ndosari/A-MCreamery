@@ -1,0 +1,25 @@
+<div class="container">
+<h1> Welcome Back <%=current_user.employee.first_name.capitalize%>!</h1><br><br>
+
+
+<h3>Personal Information</h3><br>
+<table class="table table-hover" style="width: 70%; background-color: white;">
+  <thead class= "thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= current_user.employee.proper_name.capitalize %></td>
+        <td><%= current_user.email%></td>
+        <td><%= current_user.employee.phone %></td>
+        <td><%= current_user.employee.role.capitalize %></td>
+  </tbody>
+</table>
+
+<br>
+</div>

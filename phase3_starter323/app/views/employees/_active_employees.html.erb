@@ -1,0 +1,50 @@
+<!-- BACKGROUND -->
+<div style="background-image: url(assets/icecream_icon.jpg); background-repeat: repeat; background-color:rgba(0, 0, 0, 0.3);">
+
+<% if @active_employees.empty? %>
+  <p><em>There are no current employees at this time.</em></p>
+<% else %>
+
+<!-- IMAGE AND TITLE (and descriptions with a link) -->
+<div style="background-color: white;" align="center">
+  </br></br>
+  <img src="assets/emp_icon.png" alt="icecream" width="140" height="140"  style="border-radius: 50%; opacity: 0.5;">
+  <h2>Active Employees</h2> 
+  </br>
+</div>
+  <br>
+  <!-- TABLE OF EMPLOYEES -->
+  <table class="table table-hover table-striped table-bordered" align="center" style="width: 70%; background-color: white;">
+  <thead class= "thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Ssn</th>
+        <th>Date of birth</th>
+        <th>Phone</th>
+        <!--<th>Currently Assigned</th>-->
+        <th>Role</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @active_employees.each do |employee| %>
+        <tr>
+          <td><%= link_to employee.name, employee_path(employee) %></td>
+          <td><%= number_to_phone employee.phone unless employee.phone.nil?  %></td>
+          <td><%= employee.ssn %></td>
+          <td><%= employee.date_of_birth %></td>
+          <!--<td><%= link_to employee.current_assignment.store.name, store_path(employee.current_assignment.store) unless employee.current_assignment.nil? %></td>-->
+          <td><%= employee.role.capitalize %></td>
+          <td>
+            <%= link_to(edit_employee_path(employee), class: 'button tiny radius warning') do %>
+              &nbsp;Edit&nbsp;
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @active_employees, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
+
+<% end %>
+</div>

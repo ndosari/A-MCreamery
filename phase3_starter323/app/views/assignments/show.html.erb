@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+</br>
+
+<!-- BACKGROUND -->
+<div style="background-image: url(/assets/icecream_icon.jpg); background-repeat: repeat; background-color:rgba(0, 0, 0, 0.1); ">
+
+<!-- CARD CONTENTS (assignments information) -->
+<div class="card" style="width: 40rem; height: 40rem; left: 28%">
+  <div class="card-body">
+    
+    <!-- IMAGE AND TITLE -->
+    <div align="center">
+      <img src="/assets/assignment.png" alt="icecream" width="140" height="140"  style="border-radius: 50%; opacity: 0.6;">
+      <h5 class="card-title">Assignment Details</h5>
+    </div>
+  
+  <!-- ASSIGNMENT INFO -->  
+  <p class="card-text">
+    <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+      <strong>Store:</strong>
+      <%= @assignment.store_id %>
+    </p>
+  
+    <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+      <strong>Employee:</strong>
+      <%= @assignment.employee_id %>
+    </p>
+  
+    <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+      <strong>Start date:</strong>
+      <%= @assignment.start_date %>
+    </p>
+    
+    <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+      <strong>End date:</strong>
+      <%= @assignment.end_date %>
+    </p>
+    
+    <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+      <strong>Pay level:</strong>
+      <%= @assignment.pay_level %>
+    </p>
+  
+    <!-- BUTTONS AS LINKS (Edit | Back) -->
+    <div align="center">
+      <a class="btn btn-secondary" <%= link_to 'Edit', edit_assignment_path(@assignment) %></a>
+      <a class="btn btn-secondary" <%= link_to 'Back', assignments_path %></a>
+    </div>
+    
+  </div>
+</div>
+</br>

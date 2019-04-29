@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+</br>
+
+<!-- BACKGROUND -->
+<div style="background-image: url(/assets/icecream_icon.jpg); background-repeat: repeat; background-color:rgba(0, 0, 0, 0.1); ">
+
+<!-- CARD CONTENTS (employees information) -->
+<div class="card" style="width: 40rem; height: 40rem; left: 28%">
+  <div class="card-body">
+    
+    <!-- IMAGE AND TITLE -->
+    <div align="center">
+      <img src="/assets/emp_icon.png" alt="icecream" width="140" height="140"  style="border-radius: 50%; opacity: 0.6;">
+      <h5 class="card-title">Employee Details</h5>
+    </div>
+    
+    <!-- EMPLOYEE INFO -->
+    <p class="card-text">
+      <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+        <strong>First name:</strong>
+        <%= @employee.first_name %>
+      </p>
+  
+      <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+        <strong>Last name:</strong>
+        <%= @employee.last_name %>
+      </p>
+  
+      <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+        <strong>Ssn:</strong>
+        <%= @employee.ssn %>
+      </p>
+  
+      <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+        <strong>Date of birth:</strong>
+        <%= @employee.date_of_birth %>
+      </p>
+  
+      <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+        <strong>Phone:</strong>
+        <%= @employee.phone %>
+      </p>
+  
+      <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+        <strong>Role:</strong>
+        <%= @employee.role %>
+      </p>
+  
+      <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+        <strong>Active:</strong>
+        <%= @employee.active %>
+      </p>
+      
+      <!-- BUTTONS AS LINKS (Edit | Back) -->
+      <div align="center">
+        <a class="btn btn-secondary" <%= link_to 'Edit', edit_employee_path(@employee) %></a>
+        <a class="btn btn-secondary" <%= link_to 'Back', employees_path %></a>
+      </div>
+    
+  </div>
+</div>
+</br>

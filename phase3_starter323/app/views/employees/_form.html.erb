@@ -1,0 +1,113 @@
+<!-- STYLE -->
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+  width: 50%;
+  height: 50%;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+</style>
+
+<!-- BACKGROUND -->
+<div style="background-image: url(/assets/icecream_icon.jpg); background-repeat: repeat; background-color:rgba(0, 0, 0, 0.3); ">
+
+<!-- FORM CONTAINER -->
+<div class="container">
+  
+<%= form_with(model: employee, local: true) do |form| %>
+  <% if employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+      <% employee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ssn %>
+    <%= form.text_field :ssn %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_of_birth %>
+    <%= form.date_select :date_of_birth , :start_year=>1940 %> <!-- changed start year -->
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :role %>
+    <%= form.text_field :role %>
+  </div>
+
+  <div class="field">
+    <%= form.label :active %>
+    <%= form.check_box :active %>
+  </div>
+  
+  
+  <%= form.fields_for :user do |field|%>
+  	<div class="field">
+    	<%= field.label "email" %>
+    	<%= field.text_field :email %>
+  	</div>
+  
+    <div class="field">
+    	<%= field.label "password" %>
+    	<%= field.password_field :password %>
+  	</div>
+  	
+  <% end %>
+  
+  <div class="actions" align="center">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>

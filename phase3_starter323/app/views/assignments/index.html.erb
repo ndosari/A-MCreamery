@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<!-- BACKGROUND -->
+<div style="background-image: url(assets/icecream_icon.jpg); background-repeat: repeat; background-color:rgba(0, 0, 0, 0.3);">
+
+<!-- IMAGE AND TITLE (and descriptions with a link) -->
+<div style="background-color: white;" align="center">
+  </br></br>
+  <img src="assets/assignment.png" alt="icecream" width="140" height="140"  style="border-radius: 50%; opacity: 0.5;">
+  <h2>Assignments</h2>
+  <h6>The assignments assigned to employees are listed below.  <a <%= link_to 'Click here to add a new assignment', new_assignment_path %></a></h6>
+  </br>
+</div>
+
+<!-- TABLE OF ASSIGNMENTS -->
+<table class="table table-hover table-striped table-bordered" align="center" style="width: 70%; background-color: white;">
+  <thead class= "thead-dark">
+    <tr>
+      <th>Store</th>
+      <th>Employee</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Pay level</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assignments.each do |assignment| %>
+      <tr>
+        <td><%= assignment.store_id %></td>
+        <td><%= assignment.employee_id %></td>
+        <td><%= assignment.start_date %></td>
+        <td><%= assignment.end_date %></td>
+        <td><%= assignment.pay_level %></td>
+        <td><%= link_to 'Show', assignment %></td>
+        <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
+        <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+</div>
+

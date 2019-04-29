@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+</br>
+
+<!-- BACKGROUND -->
+<div style="background-image: url(/assets/icecream_icon.jpg); background-repeat: repeat; background-color:rgba(0, 0, 0, 0.1); ">
+
+<!-- CARD CONTENTS (stores information) -->
+<div class="card" style="width: 40rem; height: 50rem; left: 28%">
+  <div class="card-body">
+     
+    <!-- IMAGE AND TITLE -->
+    <div align="center">
+        <img src="/assets/store_icon.png" alt="icecream" width="140" height="140"  style="border-radius: 50%; opacity: 0.6;">
+        <h5 class="card-title">Store Details</h5>
+    </div>
+    
+    <!-- STORE INFO -->
+    <p class="card-text">
+        <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+            <strong>Name:  </strong>
+            <%= @store.name %>
+        </p>
+
+        <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+          <strong>Street:  </strong>
+          <%= @store.street %>
+        </p>
+
+        <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+          <strong>City:  </strong>
+          <%= @store.city %>
+        </p>
+
+        <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+          <strong>State:  </strong>
+          <%= @store.state %>
+        </p>
+
+        <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+          <strong>Zip:  </strong>
+          <%= @store.zip %>
+        </p>
+
+        <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+          <strong>Phone:  </strong>
+          <%= @store.phone %>
+        </p>
+
+        <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+          <strong>Latitude:  </strong>
+          <%= @store.latitude %>
+        </p>
+
+        <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+          <strong>Longitude:  </strong>
+          <%= @store.longitude %>
+        </p>
+
+        <p style="border-bottom: 1px solid gray; padding-bottom: 15px;">
+          <strong>Active:  </strong>
+          <%= @store.active %>
+        </p>
+    </p>
+    
+    <!-- BUTTONS AS LINKS (Edit | Back) -->
+    <div align="center">
+        <a class="btn btn-secondary" <%= link_to 'Edit', edit_store_path(@store) %></a>
+        <a class="btn btn-secondary" <%= link_to 'Back', stores_path %></a>
+    </div>
+    
+  </div>
+</div>
+</br>

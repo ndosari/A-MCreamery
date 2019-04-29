@@ -1,0 +1,122 @@
+<p id="notice"><%= notice %></p>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    
+    <div class="carousel-inner">
+      
+      <!-- FIRST CAROUSEL -->
+      <div class="carousel-item active">
+        <img src="assets/store.jpg" alt="store" style="opacity: 0.3">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Our Stores.</h1>
+            <p>Check out our nearest branch.</p>
+            <!--<p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>-->
+          </div>
+        </div>
+      </div>
+      
+      <!-- SECOND CAROUSEL -->
+      <div class="carousel-item">
+        <img src="assets/scoop.jpg" alt="icecream" style="opacity: 0.3">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Our Employees.</h1>
+            <p>Get to know our staff.</p>
+            <!--<p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>-->
+          </div>
+        </div>
+      </div>
+      
+      <!-- THIRD CAROUSEL -->
+      <div class="carousel-item">
+        <img src="assets/scoopss.jpg" alt="icecream" style="opacity: 0.3">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>The Best Ice Cream.</h1>
+            <p>Discover the processes of producing the best ice cream!</p>
+            <!--<p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>-->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+     
+     <!-- STORES -->
+      <div class="col-lg-4">
+        <img src="assets/pink_bg.jpg" alt="icecream" width="140" height="140"  style="border-radius: 50%">
+        <!--<svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>-->
+        <h2>Stores</h2>
+        <p>Visit our store branches, located in the Greater Pittsburgh area.</p>
+        <p><a class="btn btn-secondary" role="button" <%= link_to "View Stores",stores_path %></a></p>
+      </div><!-- /.col-lg-4 -->
+      
+      <!-- EMPLOYEES -->
+      <div class="col-lg-4">
+        <img src="assets/blue_bg.jpg" alt="icecream" width="140" height="140"  style="border-radius: 50%">
+        <!--<svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>-->
+        <h2>Employees</h2>
+        <p>Visit our store branches, located in the Greater Pittsburgh area.</p>
+        <p><a class="btn btn-secondary" role="button" <%= link_to "View Employees",employees_path%></a></p>
+      </div><!-- /.col-lg-4 -->
+      
+      <!-- ASSIGNMENTS -->
+      <div class="col-lg-4">
+        <img src="assets/red_bg.jpg" alt="icecream" width="140" height="140"  style="border-radius: 50%">
+        <!--<svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>-->
+        <h2>Assignments</h2>
+        <p>Visit our store branches, located in the Greater Pittsburgh area.</p>
+        <p><a class="btn btn-secondary" role="button" <%= link_to "View Assignments",assignments_path%></a></p>
+      </div><!-- /.col-lg-4 -->
+   
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Our Amazing Creamery. <span class="text-muted">It’ll blow your mind.</span></h2>
+        <p class="lead">The A&M Creamery is the brandchild of Alex and Mark Heimann. Our stores are located in the Greater Pittsburgh area.</p>
+      </div>
+      <div class="col-md-5">
+        <img src="assets/pink_bg.jpg" alt="icecream" width="500" height="500" >
+        <!--<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>-->
+      </div>
+    </div>
+
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
